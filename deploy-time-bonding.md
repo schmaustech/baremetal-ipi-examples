@@ -1,4 +1,4 @@
-# Enable LACP Bonding at deployment time
+# Enable LACP Bonding at Deployment Time
 
 1. Create the required network files.
 
