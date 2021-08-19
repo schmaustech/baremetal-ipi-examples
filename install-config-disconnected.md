@@ -1,3 +1,5 @@
+
+~~~bash
 apiVersion: v1beta4
 baseDomain: schmaustech.com
 metadata:
@@ -107,3 +109,4 @@ additionalTrustBundle: |
   9GHm3drUYGqBJDvIemQaXfnwy9Gxx+oBDpXLXOuo+edK812zh/q7s2FELfH5ZieE
   Q3dIH8UGsnjYxv8G3O23cYKZ1U0iiu9QvPRFm0F8JuFZqLQ=
   -----END CERTIFICATE-----
+~~~
