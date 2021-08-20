@@ -33,6 +33,7 @@ platform:
           password: password
         bootMACAddress: 52:54:00:7e:08:45
         hardwareProfile: default
+        bootMode: legacy
       - name: master-1
         role: master
         bmc:
@@ -41,6 +42,7 @@ platform:
           password: password
         bootMACAddress: 52:54:00:b4:ce:9e 
         hardwareProfile: default
+        bootMode: legacy
       - name: master-2
         role: master
         bmc:
@@ -49,6 +51,7 @@ platform:
           password: password
         bootMACAddress: 52:54:00:70:2e:ed
         hardwareProfile: default
+        bootMode: legacy
       - name: worker-0
         role: master
         bmc:
@@ -56,7 +59,8 @@ platform:
           username: admin
           password: password
         bootMACAddress: 52:54:00:30:8d:61
-        hardwareProfile: unknown        
+        hardwareProfile: unknown
+        bootMode: UEFISecureBoot
       - name: worker-1
         role: master
         bmc:
@@ -64,7 +68,8 @@ platform:
           username: admin
           password: password
         bootMACAddress: 52:54:00:aa:8a:a8
-        hardwareProfile: unknown 
+        hardwareProfile: unknown
+        bootMode: UEFISecureBoot
 pullSecret: 'PULLSECRET-REDACTED'
 sshKey: 'SSH-KEY-REDACTED'
 imageContentSources:
