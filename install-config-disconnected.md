@@ -53,7 +53,7 @@ platform:
         hardwareProfile: default
         bootMode: legacy
       - name: worker-0
-        role: master
+        role: worker
         bmc:
           address: ipmi://192.168.0.10:6224
           username: admin
@@ -62,7 +62,7 @@ platform:
         hardwareProfile: unknown
         bootMode: UEFISecureBoot
       - name: worker-1
-        role: master
+        role: worker
         bmc:
           address: ipmi://192.168.0.10:6225
           username: admin
