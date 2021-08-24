@@ -45,7 +45,7 @@
     cat ifcfg-ens4 | base64 -w0
     ```
 
-3. Create the machineconfig yaml to include in the manifests. Ensure to add the base64 to the respective section.
+3. Create the MachineConfig yaml to include in the manifests. Ensure to add the base64 to the respective section.
 
     11-master-bond0.yaml:
 
