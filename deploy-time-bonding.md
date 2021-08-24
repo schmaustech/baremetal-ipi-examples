@@ -97,7 +97,7 @@
             }
     ```
     
-4. After creating the installation manifests, copy this file to $CLUSTERDIR/openshift
+4. After creating the MachineConfig file, copy this file to $CLUSTERDIR/openshift
 
     ```
     cp 11-master-bond0.yaml $CLUSTERDIR/openshift
