@@ -21,7 +21,7 @@
             partitions:
             - sizeMiB: 100000
               startMiB: 0
-             label: var
+              label: var
           filesystems:
             - path: /var
               device: /dev/disk/by-partlabel/var
