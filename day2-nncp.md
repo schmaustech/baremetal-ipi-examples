@@ -80,3 +80,41 @@ spec:
         dhcp: false
         enabled: true
 ~~~
+
+Example of static IP on a bond1 interface on worker with hostname worker-2:
+
+~~~
+apiVersion: nmstate.io/v1beta1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: bond1-eth1-eth2-policy 
+spec:
+  nodeSelector: 
+    kubernetes.io/hostname: worker-2
+  desiredState:
+    interfaces:
+    - name: bond1 
+      description: Bond enslaving eth1 and eth2 
+      type: bond 
+      ipv4:
+        address:
+        - ip: 192.168.0.100
+          prefix-length: 24
+        dhcp: false 
+        enabled: true 
+      link-aggregation:
+        mode: active-backup 
+        options:
+          miimon: '140' 
+        slaves: 
+        - eth1
+        - eth2
+      mtu: 1450
+    routes:
+      config:
+      - destination: 192.168.0.0/24
+        metric: 150
+        next-hop-address: 192.168.0.1
+        next-hop-interface: bond1
+        table-id: 254
+~~~
