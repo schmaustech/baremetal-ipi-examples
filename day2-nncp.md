@@ -118,3 +118,39 @@ spec:
         next-hop-interface: bond1
         table-id: 254
 ~~~
+
+Example of static IP, route and DNS
+
+~~~
+apiVersion: nmstate.io/v1beta1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: static-ip
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: master-0
+  desiredState:
+    interfaces:
+    - name: enp2s0
+      type: ethernet
+      state: up
+      ipv4:
+        address:
+        - ip: 192.168.0.216
+          prefix-length: 24
+        dhcp: false
+        enabled: true
+    routes:
+      config:
+      - destination: 192.168.0.0/24
+        metric: 100
+        next-hop-address: 192.168.0.1
+        next-hop-interface: enp2s0
+        table-id: 254
+    dns-resolver:
+      config:
+        search:
+        - schmaustech.com
+        server:
+        - 192.168.0.10
+~~~
