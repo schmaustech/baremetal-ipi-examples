@@ -50,8 +50,9 @@ mode=802.3ad
 miimon=100
 
 [ipv4]
-method=disabled
+method=auto
 dhcp-timeout=2147483647
+never-default=true
 
 [ipv6]
 ```
