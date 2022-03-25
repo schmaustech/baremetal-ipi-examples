@@ -1,6 +1,8 @@
+# CNV NNCP Policy Example
 
+This example will create a bridge brext off the interface of eno2 on every node in the cluster and give it an ipaddress of 192.168.0.2 (which is okay because these interfaces are not connected at the switch):
 
-
+~~~bash
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
 metadata:
@@ -23,3 +25,4 @@ spec:
               enabled: false
           port:
             - name: eno2
+~~~
