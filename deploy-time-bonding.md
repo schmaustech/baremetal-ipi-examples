@@ -114,7 +114,7 @@ spec:
         name: set-client-id.service
 ```
 
-You will also want to ensure you have the set-client-id.sh script on the control plane and worker nodes.  Its contents look like this:
+You will also want to ensure you have the set-client-id.sh script on the control plane and worker nodes.  We only needed this to workaround some Intel nics but if you dont have them, then you can remove every reference to that systemd setup.  The contents look like this:
 
 ```
 #!/usr/bin/bash
