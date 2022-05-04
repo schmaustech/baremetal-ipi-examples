@@ -114,6 +114,20 @@ spec:
         name: set-client-id.service
 ```
 
+You will also want to ensure you have the set-client-id.sh script on the control plane and worker nodes.  Its contents look like this:
+
+```
+#!/usr/bin/bash
+
+for nic in $(ip link | awk -F'[: ]+' '/{{ vf_interface_prefix }}/ {print $2}')
+do
+  if [[ "$(nmcli -g GENERAL.DRIVER device show $nic)" == "i40e" ]]; then
+    echo "Intel NIC $nic found. Enabling link-down-on-close..."
+    /usr/sbin/ethtool --set-priv-flags $nic link-down-on-close on
+  fi
+done
+```
+
 4. After creating the MachineConfig file, copy this file to $CLUSTERDIR/openshift
 
 ```
